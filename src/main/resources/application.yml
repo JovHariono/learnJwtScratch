@@ -18,4 +18,8 @@ spring:
 
 app:
   security:
+    jwt:
+      access-token-expiration: 86400000 # 24 HOURS for local but for prod better 15 mins
+      refresh-token-expiration: 604800000
+    disposable-email: 10minutemail,20minutemail,33mail,5ymail,anonbox,guerrillamail,mailinator,maildrop,mailnesia,moakt,my10minutemail,throwawaymail,trashmail,temp-mail,tempmail,truemail,yopmail
 

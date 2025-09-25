@@ -32,7 +32,7 @@ public class SecurityConfig {
             "/webjars/**",
             "/swagger-ui.html"
     };
-    private final JwtFiltter jwtFiltter;
+    private final JwtFilter jwtFilter;
 
     @Bean
     public SecurityFilterChain filterChain(final HttpSecurity http) throws Exception {
@@ -44,7 +44,7 @@ public class SecurityConfig {
                 )
                 .sessionManagement(sess ->
                         sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .addFilterBefore(this.jwtFiltter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(this.jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 }

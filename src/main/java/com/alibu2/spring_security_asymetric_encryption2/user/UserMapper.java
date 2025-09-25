@@ -1,11 +1,18 @@
 package com.alibu2.spring_security_asymetric_encryption2.user;
 
+import com.alibu2.spring_security_asymetric_encryption2.auth.request.RegistrationRequest;
 import com.alibu2.spring_security_asymetric_encryption2.user.request.ProfileUpdateRequest;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class UserMapper {
+
+    private final PasswordEncoder passwordEncoder;
+
     public void mergerUserInfo(User user, ProfileUpdateRequest request) {
 
         if (StringUtils.isNotBlank(request.getFirstName())
@@ -22,5 +29,20 @@ public class UserMapper {
                 && !request.getDateOfBirth().equals(user.getDateOfBirth())) {
             user.setDateOfBirth(request.getDateOfBirth());
         }
+    }
+
+    public User toUser(RegistrationRequest request) {
+        return User.builder()
+                .firstName(request.getFirstName())
+                .lastName(request.getLastName())
+                .email(request.getEmail())
+                .phoneNumber(request.getPhoneNumber())
+                .password(this.passwordEncoder.encode(request.getPassword()))
+                .enabled(true)
+                .locked(false)
+                .credentialExpired(false)
+                .emailVerified(false)
+                .phoneVerified(false)
+                .build();
     }
 }
