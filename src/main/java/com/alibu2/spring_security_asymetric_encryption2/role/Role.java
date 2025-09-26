@@ -8,7 +8,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+//import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.List;
 
@@ -17,10 +17,10 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@Builder
+//@Builder
 @Table(name = "ROLES")
-@EntityListeners(AuditingEntityListener.class)
 @SuperBuilder
+//@EntityListeners(AuditingEntityListener.class)
 public class Role extends BaseEntity {
 
     private String name;

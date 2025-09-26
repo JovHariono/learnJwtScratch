@@ -16,7 +16,7 @@ public enum ErrorCode {
     PHONE_ALREADY_EXISTS("PHONE_ALREADY_EXISTS", "Phone number already exists", HttpStatus.BAD_REQUEST),
     PASSWORD_MISMATCH("PASSWORD_MISMATCH", "Password do not match", HttpStatus.BAD_REQUEST),
     ERR_USER_DISABLED("ERR_USER_DISABLED", "User is disabled", HttpStatus.UNAUTHORIZED),
-    BAD_CREDENTIALS("BAD_CREDENTIALS", "Username or PAssword is incorrect", HttpStatus.UNAUTHORIZED),
+    BAD_CREDENTIALS("BAD_CREDENTIALS", "Username or Password is incorrect", HttpStatus.UNAUTHORIZED),
     USERNAME_NOT_FOUND("USERNAME_NOT_FOUND", "Username not found", HttpStatus.UNAUTHORIZED),
     INTERNAL_EXCEPTION("INTERNAL_EXCEPTION", "Internal server error", HttpStatus.NOT_FOUND);
 

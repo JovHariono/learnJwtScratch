@@ -17,7 +17,7 @@ public class RegistrationRequest {
 
     @NotBlank(message = "VALIDATION.REGISTRATION.FIRST_NAME.NOT_BLANK")
     @Size(
-            min = 5,
+            min = 3,
             max = 50,
             message = "VALIDATION.REGISTRATION.FIRST_NAME.SIZE"
     )
@@ -30,7 +30,7 @@ public class RegistrationRequest {
 
     @NotBlank(message = "VALIDATION.REGISTRATION.LAST_NAME.NOT_BLANK")
     @Size(
-            min = 5,
+            min = 3,
             max = 50,
             message = "VALIDATION.REGISTRATION.LAST_NAME.SIZE"
     )
@@ -62,7 +62,7 @@ public class RegistrationRequest {
             message = "VALIDATION.REGISTRATION.PASSWORD.SIZE"
     )
     @Pattern(
-            regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\\\d)(?=.*\\\\W).*$"
+            regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*\\W).*$"
     )
     @Schema(example = "<PASSWORD>")
     private String password;
